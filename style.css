@@ -1202,3 +1202,10 @@ html{scroll-behavior:auto}
 }
 @media(max-width:600px){.sf-end{padding:48px 0}.sf-end-actions .btn{flex:1 1 100%;justify-content:space-between}}
 .btn:not(.ghost):not(.light),.cta,.cc-btn.fill{--fill:#0a8581}
+
+
+/* Bandeau de crédit, tout en bas du footer */
+.site-footer .credit{background:var(--teal-dd);border-top:1px solid #ffffff14;padding:12px var(--gut);text-align:center}
+.site-footer .credit p{margin:0;font-size:12.5px;line-height:1.5;letter-spacing:.04em;color:#9fd8d4}
+.site-footer .credit strong{font-weight:600;color:#fff;letter-spacing:.06em}
+@media(max-width:1020px){.site-footer .credit{text-align:left;padding:14px 72px 14px var(--gut)}}
