@@ -18,10 +18,15 @@
 </header>
 <main>
 <section class="section"><h1 class="ph">Contact</h1><div class="contact">
-      <ul>
-        <li><strong>Adresse :</strong> à compléter</li>
-        <li><strong>Téléphone :</strong> à compléter</li>
-        <li><strong>Horaires :</strong> à compléter</li>
+      <ul class="infos">
+        <li><strong>Adresse :</strong><br>CCial L'Esplanade, Place du Chapeau de Gendarme<br>49000 Angers</li>
+        <li><strong>Téléphone :</strong><br><a href="tel:+33241681145">02 41 68 11 45</a></li>
+        <li><strong>Horaires :</strong>
+          <table class="hours">
+            <tr><td>Lundi</td><td>Fermé</td></tr>
+            <tr><td>Mardi – Samedi</td><td>9h30–12h30, 13h30–18h30</td></tr>
+            <tr><td>Dimanche</td><td>Fermé</td></tr>
+          </table></li>
       </ul>
       <form action="mailto:contact@grandangleoptique.fr" method="post" enctype="text/plain">
         <label>Nom <input name="nom" required></label>
@@ -29,7 +34,13 @@
         <label>Message <textarea name="message" rows="4" required></textarea></label>
         <button class="btn" type="submit">Envoyer</button>
       </form>
-    </div></section>
+    </div>
+    <iframe class="map" title="Plan d'accès Grand Angle Optique" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Grand+Angle+Optique,+Place+du+Chapeau+de+Gendarme,+49000+Angers&amp;output=embed"></iframe></section>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Optician","name":"Grand Angle Optique","url":"https://grandangleoptique.fr/","telephone":"+33241681145",
+"address":{"@type":"PostalAddress","streetAddress":"CCial L'Esplanade, Place du Chapeau de Gendarme","postalCode":"49000","addressLocality":"Angers","addressCountry":"FR"},
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"13:30","closes":"18:30"}]}
+</script>
 </main>
 <footer><p>© <span id="y"></span> Grand Angle Optique · <a href="contact.html">Contact</a></p></footer>
 <script src="script.js"></script>
