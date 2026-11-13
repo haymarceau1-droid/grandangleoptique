@@ -76,3 +76,9 @@ footer p{margin:0}
 .kf .intro{font-size:18px;font-weight:500;color:var(--ink)}
 .kf p{margin:0 0 12px;max-width:720px}
 .kf .btn{margin-top:8px}
+.about{display:grid;gap:20px}
+.person{display:flex;gap:24px;align-items:flex-start;margin-top:24px;padding-top:24px;border-top:1px solid #02666633}
+.avatar{flex:none;width:96px;height:96px;border-radius:50%;background:var(--teal);color:#fff;font:400 44px/96px var(--display);text-align:center}
+.person h3{margin:0;color:var(--teal);font-size:22px}
+.role{font-weight:500;color:var(--muted);margin:0 0 12px!important}
+@media(max-width:600px){.person{flex-direction:column}}
