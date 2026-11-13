@@ -4,10 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grand Angle Optique – Opticien à Angers</title>
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="description" content="Grand Angle Optique, opticien à Angers (CCial L'Esplanade). Lunettes de vue, solaires, lentilles et conseil personnalisé.">
+<link rel="canonical" href="https://grandangleoptique.fr/">
+<meta name="theme-color" content="#026666">
+<meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Grand Angle Optique">
+<meta property="og:title" content="Grand Angle Optique – Opticien à Angers"><meta property="og:description" content="Grand Angle Optique, opticien à Angers (CCial L'Esplanade). Lunettes de vue, solaires, lentilles et conseil personnalisé."><meta property="og:url" content="https://grandangleoptique.fr/"><meta property="og:image" content="https://grandangleoptique.fr/assets/logo.png">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Grand Angle Optique – Opticien à Angers"><meta name="twitter:description" content="Grand Angle Optique, opticien à Angers (CCial L'Esplanade). Lunettes de vue, solaires, lentilles et conseil personnalisé.">
 <link rel="icon" href="assets/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baumans&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="preload" href="assets/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,10 +34,21 @@
       </div>
     </div>
     <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="3" opacity=".25"/><path d="M15 100c25-40 55-58 85-58s60 18 85 58c-25 40-55 58-85 58S40 140 15 100z" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="currentColor"/><circle cx="100" cy="100" r="14" fill="#fff"/></svg>
+      <div class="ring r1"></div><div class="ring r2"></div>
+      <svg id="eye" viewBox="0 0 240 240">
+        <defs><clipPath id="lid"><path id="lidp" d="M10 120C45 66 82 46 120 46s75 20 110 74c-35 54-72 74-110 74S45 174 10 120z"/></clipPath>
+        <radialGradient id="ir" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#2fa3a0"/><stop offset="1" stop-color="#014a4a"/></radialGradient></defs>
+        <path d="M10 120C45 66 82 46 120 46s75 20 110 74c-35 54-72 74-110 74S45 174 10 120z" fill="#fff"/>
+        <g clip-path="url(#lid)"><g id="iris"><circle cx="120" cy="120" r="46" fill="url(#ir)"/><circle cx="120" cy="120" r="22" fill="#012a2a"/><circle cx="108" cy="106" r="7" fill="#fff" opacity=".9"/></g>
+          <rect id="blink" x="0" y="0" width="240" height="0" fill="#026666"/></g>
+        <path d="M10 120C45 66 82 46 120 46s75 20 110 74c-35 54-72 74-110 74S45 174 10 120z" fill="none" stroke="#fff" stroke-width="5" opacity=".9"/>
+      </svg>
     </div>
   </section>
-  <section class="section"><h2>Notre savoir faire</h2><div class="cards"><article><h3>L’analyse de votre vue</h3><p>Nos opticiens diplômés réalisent un bilan complet et précis de votre vision.</p></article><article><h3>Le choix des montures</h3><p>Un large éventail de montures pour hommes, femmes et enfants, alliant esthétique, confort et robustesse.</p></article><article><h3>Le réglage et service après-vente</h3><p>Nous ajustons vos lunettes gratuitement, même après l’achat.</p></article><article><h3>Lentilles de contact</h3><p>Choix, adaptation, conseils personnalisés et suivi régulier.</p></article><article><h3>L’accompagnement administratif</h3><p>Prise en charge mutuelle et remboursement : une transparence totale sur les coûts.</p></article></div>
+  
+  <div class="marquee" aria-hidden="true"><div class="track"><span>Analyse de la vue</span><span>Montures pour tous</span><span>Réglage gratuit</span><span>Lentilles de contact</span><span>Impression 3D de dépannage</span><span>Mutuelle &amp; remboursement</span><span>Analyse de la vue</span><span>Montures pour tous</span><span>Réglage gratuit</span><span>Lentilles de contact</span><span>Impression 3D de dépannage</span><span>Mutuelle &amp; remboursement</span></div></div>
+  <section class="stats"><div class="stat"><b data-count="25" data-suffix="+">0</b><span>ans d’expérience</span></div><div class="stat"><b data-count="1" data-prefix="&lt; " data-suffix=" h">0</b><span>pour une monture de dépannage</span></div><div class="stat"><b data-count="5">0</b><span>services au même endroit</span></div><div class="stat"><b data-count="0" data-suffix=" €">0</b><span>le réglage, même après achat</span></div></section>
+<section class="section"><h2>Notre savoir faire</h2><div class="cards home-cards"><article><h3>L’analyse de votre vue</h3><p>Nos opticiens diplômés réalisent un bilan complet et précis de votre vision.</p></article><article><h3>Le choix des montures</h3><p>Un large éventail de montures pour hommes, femmes et enfants, alliant esthétique, confort et robustesse.</p></article><article><h3>Le réglage et service après-vente</h3><p>Nous ajustons vos lunettes gratuitement, même après l’achat.</p></article><article><h3>Lentilles de contact</h3><p>Choix, adaptation, conseils personnalisés et suivi régulier.</p></article><article><h3>L’accompagnement administratif</h3><p>Prise en charge mutuelle et remboursement : une transparence totale sur les coûts.</p></article></div>
     <p style="margin-top:28px"><a class="btn ghost" href="notre-savoir-faire.html">En savoir plus</a></p></section>
   <section id="rdv" class="section alt"><h2>Prendre rendez-vous</h2><div class="contact">
       <ul class="infos">
@@ -48,17 +65,23 @@
         <label>Nom <input name="nom" required></label>
         <label>E-mail <input type="email" name="email" required></label>
         <label>Message <textarea name="message" rows="4" required></textarea></label>
+        <p class="note">Les informations saisies ne servent qu’à répondre à votre demande (voir la <a href="politique-de-confidentialite.html">politique de confidentialité</a>).</p>
         <button class="btn" type="submit">Envoyer</button>
       </form>
     </div>
-    <iframe class="map" title="Plan d'accès Grand Angle Optique" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Grand+Angle+Optique,+Place+du+Chapeau+de+Gendarme,+49000+Angers&amp;output=embed"></iframe></section>
+    <div class="map map-consent" data-src="https://www.google.com/maps?q=Grand+Angle+Optique,+Place+du+Chapeau+de+Gendarme,+49000+Angers&amp;output=embed">
+      <p><strong>Plan d’accès</strong></p>
+      <p>Cette carte est fournie par Google Maps. Son affichage transmet des données (dont votre adresse IP) à Google. <a href="politique-de-confidentialite.html">En savoir plus</a></p>
+      <button class="btn" type="button">Afficher la carte</button>
+      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Grand+Angle+Optique+Angers" target="_blank" rel="noopener">Ou ouvrir l’itinéraire dans Google Maps</a></p>
+    </div></section>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Optician","name":"Grand Angle Optique","url":"https://grandangleoptique.fr/","telephone":"+33241681145",
 "address":{"@type":"PostalAddress","streetAddress":"CCial L'Esplanade, Place du Chapeau de Gendarme","postalCode":"49000","addressLocality":"Angers","addressCountry":"FR"},
 "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"13:30","closes":"18:30"}]}
 </script>
 </main>
-<footer><p>© <span id="y"></span> Grand Angle Optique · <a href="contact.html">Contact</a></p></footer>
+<footer><p>© <span id="y"></span> Grand Angle Optique · CCial L’Esplanade, 49000 Angers · <a href="tel:+33241681145">02 41 68 11 45</a></p><p class="legal"><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-de-confidentialite.html">Confidentialité &amp; cookies</a></p></footer>
 <script src="script.js"></script>
 </body>
 </html>
