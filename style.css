@@ -1238,3 +1238,10 @@ html{scroll-behavior:auto}
 .btn:hover .ic:first-child:not(:last-child),.cta:hover .ic:first-child:not(:last-child){transform:none}
 .pill:hover .pill-ic{transform:translateX(3px);background:var(--teal-d)}
 @media(hover:none){.btn:hover,.cta:hover,.pill:hover{transform:none;background-size:0% 100%!important}}
+
+
+/* Verre de la barre sur la bannière : nettement plus transparent */
+.site-header::before,.site-header.scrolled::before{transition:background-color .3s ease}
+.site-header.over-hero::before,.site-header.over-hero.scrolled::before{background:#014a4a47;border-color:#ffffff2e;-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-header.over-hero::before,.site-header.over-hero.scrolled::before{background:#014a4acc}}
+@media(prefers-reduced-transparency:reduce){.site-header.over-hero::before,.site-header.over-hero.scrolled::before{background:#014a4a}}

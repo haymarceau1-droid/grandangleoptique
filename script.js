@@ -149,3 +149,10 @@ $$('.map-consent').forEach(box=>$('button',box).addEventListener('click',()=>{
   $$('[data-cookie-open]').forEach(b=>b.addEventListener('click',()=>open(true)));
   const c=read();if(c)apply(c.maps);else{el.hidden=true;setTimeout(()=>open(false),900)}
 })();
+
+/* ---------- Barre de navigation plus transparente tant que la bannière est derrière ---------- */
+(function(){
+  const hero=$('.hero2'),h=$('.site-header');
+  if(!hero||!h||!('IntersectionObserver' in window))return;
+  new IntersectionObserver(e=>h.classList.toggle('over-hero',e[e.length-1].isIntersecting),{rootMargin:'-76px 0px 0px 0px'}).observe(hero);
+})();
