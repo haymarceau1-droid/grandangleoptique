@@ -902,3 +902,7 @@ body.menu-open .quickbar,body.menu-open .totop,body.menu-open .cc{opacity:0;visi
 /* pas de lissage de défilement imposé : le navigateur gère mieux */
 html{scroll-behavior:auto}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* Sections : plus de barre colorée sur le côté */
+.kf,.kf.rev{border-left:0!important;border-right:0!important}
+@media(max-width:600px){.kf,.kf.rev{border-left:0!important;border-right:0!important}}
