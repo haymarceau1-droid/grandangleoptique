@@ -514,3 +514,20 @@ body.menu-open{overflow:hidden}
 .photo-strip figure:hover img{transform:scale(1.06)}
 @media(max-width:1020px){.gal{grid-template-columns:1fr 1fr}.g1{grid-column:1/-1;aspect-ratio:4/3}.g2{margin-top:0}}
 @media(max-width:600px){.gal{grid-template-columns:1fr}.g1{aspect-ratio:3/4}.photo-strip{grid-template-columns:1fr}.photo-strip figure{aspect-ratio:16/10}}
+
+/* ===== Hero plein écran ===== */
+.hero.hero2{background:var(--teal-dd)}
+.hero-bg{display:block}
+.hb-photos{position:absolute;inset:0;overflow:hidden}
+.hbp{filter:none;transform:scale(1.06);transition:opacity 1.2s var(--ease),transform 9s linear}
+.hbp.on{opacity:1;transform:scale(1.14)}
+.hb-photos::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 55% at 50% 50%,#014a4a8c,transparent 75%),
+  linear-gradient(180deg,#014a4aa6 0,#02666650 35%,#02666650 60%,#014a4ad9 100%)}
+.hero2 h1,.hero2 .h1{text-shadow:0 4px 34px #0000006b}
+.hero2 .sub{text-shadow:0 2px 18px #00000070}
+@media(prefers-reduced-motion:reduce){.hbp,.hbp.on{transform:none!important}}
+.hb-photos::after{background:
+  radial-gradient(ellipse 65% 60% at 50% 50%,#014a4acc,#014a4a66 70%,transparent 100%),
+  linear-gradient(180deg,#014a4acc 0,#0266668c 35%,#0266668c 60%,#014a4aeb 100%)}
+@media(max-width:600px){.hero-slides{padding-bottom:200px}.hero-ctrl{bottom:100px}}
