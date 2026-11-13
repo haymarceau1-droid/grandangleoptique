@@ -37,7 +37,7 @@ toTop&&toTop.addEventListener('click',()=>scrollTo({top:0,behavior:reduce?'auto'
     else if(el.classList.contains('status')){el.lastElementChild.innerHTML=`<b>${msg.split(' · ')[0]}</b> · ${msg.split(' · ')[1]}`;el.classList.toggle('open',open)}
     else el.innerHTML=`<b>${msg.split(' · ')[0]}</b> · ${msg.split(' · ')[1]}`});
   $$('[data-status-dot]').forEach(el=>el.classList.toggle('open',open));
-  $$(`.hours tr[data-day="${d}"]`).forEach(r=>r.classList.add('today'));
+  $$(`.hours tr[data-day="${d}"],.ft-hours tr[data-day="${d}"]`).forEach(r=>r.classList.add('today'));
 })();
 
 /* ---------- Apparition au scroll + compteurs ---------- */
