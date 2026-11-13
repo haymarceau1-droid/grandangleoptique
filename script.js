@@ -10,12 +10,15 @@ addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open
 addEventListener('resize',()=>{if(innerWidth>1020)setMenu(false)});
 $('#y').textContent=new Date().getFullYear();
 
-/* ---------- Scroll : progression, en-tête, retour en haut ---------- */
-const bar={style:{}};
+/* ---------- En-tête et retour en haut (sans écouteur de défilement) ---------- */
 const hdr=$('.site-header'),toTop=$('.totop');
-const onScroll=()=>{const h=document.documentElement,y=h.scrollTop,m=h.scrollHeight-h.clientHeight;
-  bar.style.transform=`scaleX(${m>0?y/m:0})`;hdr.classList.toggle('scrolled',y>30);toTop&&toTop.classList.toggle('show',y>700)};
-addEventListener('scroll',onScroll,{passive:true});onScroll();
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  const mk=(top,cb)=>{const s=document.createElement('div');s.setAttribute('aria-hidden','true');s.style.cssText=`position:absolute;top:${top}px;left:0;width:1px;height:1px;pointer-events:none`;document.body.appendChild(s);new IntersectionObserver(e=>cb(!e[0].isIntersecting)).observe(s)};
+  document.body.style.position=document.body.style.position||'relative';
+  mk(30,v=>hdr.classList.toggle('scrolled',v));
+  if(toTop)mk(700,v=>toTop.classList.toggle('show',v));
+})();
 toTop&&toTop.addEventListener('click',()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'}));
 
 /* ---------- Ouvert / fermé (heure de Paris) ---------- */
@@ -94,7 +97,9 @@ $$('.map-consent').forEach(box=>$('button',box).addEventListener('click',()=>{
   const play=()=>{if(reduce)return;clearInterval(timer);timer=setInterval(()=>go(i+1),6500)};
   $('.hero-ctrl .next').addEventListener('click',()=>{go(i+1);play()});
   $('.hero-ctrl .prev').addEventListener('click',()=>{go(i-1);play()});
-  hero.addEventListener('pointerenter',()=>clearInterval(timer));hero.addEventListener('pointerleave',play);
+  let vis=true;document.addEventListener('visibilitychange',()=>document.hidden?clearInterval(timer):(vis&&play()));
+  if('IntersectionObserver' in window)new IntersectionObserver(e=>{vis=e[e.length-1].isIntersecting;vis?play():clearInterval(timer)}).observe(hero);
+  hero.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')clearInterval(timer)});hero.addEventListener('pointerleave',()=>{if(vis&&!document.hidden)play()});
   hero.addEventListener('focusin',()=>clearInterval(timer));
   go(0);play()})();
 
@@ -102,8 +107,9 @@ $$('.map-consent').forEach(box=>$('button',box).addEventListener('click',()=>{
 (function(){
   const rail=$('.rail');if(!rail)return;
   const fill=$('.rail-ctrl .bar i'),step=()=>(rail.querySelector('.pcard:not(.hide)')?.offsetWidth||290)+16;
-  const upd=()=>{const m=rail.scrollWidth-rail.clientWidth;fill.style.transform=`scaleX(${m>0?Math.max(.18,Math.min(1,(rail.scrollLeft/m)*.82+.18)):1})`};
-  rail.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  let max=0,tick=0;const measure=()=>{max=rail.scrollWidth-rail.clientWidth};
+  const upd=()=>{tick=0;fill.style.transform=`scaleX(${max>0?Math.max(.18,Math.min(1,(rail.scrollLeft/max)*.82+.18)):1})`};
+  rail.addEventListener('scroll',()=>{if(!tick)tick=requestAnimationFrame(upd)},{passive:true});addEventListener('resize',()=>{measure();upd()});measure();upd();
   $('.rail-ctrl .next').addEventListener('click',()=>rail.scrollBy({left:step(),behavior:reduce?'auto':'smooth'}));
   $('.rail-ctrl .prev').addEventListener('click',()=>rail.scrollBy({left:-step(),behavior:reduce?'auto':'smooth'}));
   $$('.tabs button').forEach(b=>b.addEventListener('click',()=>{
