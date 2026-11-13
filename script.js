@@ -90,7 +90,7 @@ $$('.map-consent').forEach(box=>$('button',box).addEventListener('click',()=>{
   const slides=$$('.slide'),hero=$('.hero2');if(!slides.length)return;
   let i=0,timer;const count=$('.hero-ctrl .count b'),fill=$('.hero-ctrl .bar i');
   const go=n=>{i=(n+slides.length)%slides.length;slides.forEach((s,k)=>{s.classList.toggle('active',k===i);s.setAttribute('aria-hidden',k!==i)});
-    count.textContent=i+1;fill.style.transform=`scaleX(${(i+1)/slides.length})`};
+    count.textContent=i+1;$$('.hbp').forEach(im=>im.classList.toggle('on',+im.dataset.i===i));fill.style.transform=`scaleX(${(i+1)/slides.length})`};
   const play=()=>{if(reduce)return;clearInterval(timer);timer=setInterval(()=>go(i+1),6500)};
   $('.hero-ctrl .next').addEventListener('click',()=>{go(i+1);play()});
   $('.hero-ctrl .prev').addEventListener('click',()=>{go(i-1);play()});

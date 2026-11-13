@@ -489,3 +489,28 @@ nav#nav{display:contents}
 @media(prefers-reduced-motion:reduce){.slide{transition:none}}
 
 body.menu-open{overflow:hidden}
+
+
+/* ===== Photos de la boutique ===== */
+.hb-photos{position:absolute;inset:0}
+.hbp{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s var(--ease);filter:saturate(.9)}
+.hbp.on{opacity:1}
+.hb-photos::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,#026666d9,#014a4ae6)}
+.hb-r i{z-index:1}
+.gallery{padding-top:24px!important}
+.gal{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px;align-items:stretch}
+.gcard{position:relative;display:block;aspect-ratio:3/4;border-radius:22px;overflow:hidden;color:#fff;text-decoration:none;isolation:isolate;box-shadow:var(--sh-card);transition:transform .4s var(--ease),box-shadow .4s}
+.gcard:hover{transform:translateY(-6px);box-shadow:var(--sh-hover)}
+.gcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .9s var(--ease)}
+.gcard:hover img{transform:scale(1.06)}
+.gcard::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 45%,#014a4acc)}
+.g2{margin-top:48px}
+.gcard .chip{position:absolute;top:18px;left:18px;z-index:1;background:#ffffffd9;color:var(--teal-d);backdrop-filter:blur(6px)}
+.gcap{position:absolute;left:20px;right:76px;bottom:22px;font:400 24px/1.15 var(--display)}
+.gcard .tgo{right:18px;bottom:18px}
+.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px!important}
+.photo-strip figure{margin:0;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-card)}
+.photo-strip img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.photo-strip figure:hover img{transform:scale(1.06)}
+@media(max-width:1020px){.gal{grid-template-columns:1fr 1fr}.g1{grid-column:1/-1;aspect-ratio:4/3}.g2{margin-top:0}}
+@media(max-width:600px){.gal{grid-template-columns:1fr}.g1{aspect-ratio:3/4}.photo-strip{grid-template-columns:1fr}.photo-strip figure{aspect-ratio:16/10}}
