@@ -724,3 +724,24 @@ body.menu-open{overflow:hidden}
 .subnav a{border-radius:6px}
 .eyebrow{border:0;padding:0;backdrop-filter:none}
 .g2{margin-top:0}
+
+
+/* ===== Photos : équipe et espace enfants ===== */
+.kf-img:has(img[src*="essayage"]){width:150px;aspect-ratio:3/4}
+.kf-img img[src*="essayage"]{object-fit:cover;border-radius:8px}
+.tcard.photo{background:var(--teal-d)}
+.tcard.photo img{position:absolute;inset:0;width:100%;max-width:none;height:100%;right:auto;top:auto;object-fit:cover;z-index:-2;filter:none}
+.tcard.photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#014a4a00 40%,#014a4ad9)}
+.photo-strip figure{position:relative}
+.photo-strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 12px;background:linear-gradient(180deg,transparent,#014a4acc);color:#fff;font-size:13px;line-height:1.35}
+.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px!important}
+.photo-grid h2{grid-column:1/-1;margin:0}
+.photo-grid figure{position:relative;margin:0;aspect-ratio:3/4;border-radius:8px;overflow:hidden}
+.photo-grid img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(180deg,transparent,#014a4acc);color:#fff;font-size:13px;line-height:1.35}
+@media(max-width:1020px){.photo-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.kf-img:has(img[src*="essayage"]){width:100%;aspect-ratio:4/3}}
+/* blocs de texte sans colonne d'image : empilés */
+.about .kf{display:block}
+.about .kf:has(>.kf-img){display:flex}
+.tcard.photo .chip{background:var(--teal-d);backdrop-filter:none;border:0}
