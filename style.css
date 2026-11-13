@@ -82,3 +82,9 @@ footer p{margin:0}
 .person h3{margin:0;color:var(--teal);font-size:22px}
 .role{font-weight:500;color:var(--muted);margin:0 0 12px!important}
 @media(max-width:600px){.person{flex-direction:column}}
+.kf h3{margin:20px 0 6px;color:var(--teal);font-size:20px}
+.kf a:not(.btn){color:var(--teal);text-decoration:underline}
+.steps{list-style:none;counter-reset:s;padding:0;margin:16px 0 0;display:grid;gap:12px}
+.steps li{counter-increment:s;position:relative;padding-left:52px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--teal);color:#fff;font:400 18px/36px var(--display);text-align:center}
+.steps h3{margin:0 0 4px}
