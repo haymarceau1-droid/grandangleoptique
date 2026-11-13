@@ -88,20 +88,43 @@ $$('.map-consent').forEach(box=>$('button',box).addEventListener('click',()=>{
   const fr=document.createElement('iframe');fr.className='map-frame';fr.title="Plan d'accès Grand Angle Optique";fr.loading='lazy';fr.referrerPolicy='no-referrer-when-downgrade';fr.src=box.dataset.src;
   box.replaceChildren(fr);box.classList.add('loaded')}));
 
-/* ---------- Hero : diaporama ---------- */
+/* ---------- Hero : diaporama piloté par la barre animée ---------- */
 (function(){
   const slides=$$('.slide'),hero=$('.hero2');if(!slides.length)return;
-  let i=0,timer;const count=$('.hero-ctrl .count b'),fill=$('.hero-ctrl .bar i');
-  const go=n=>{i=(n+slides.length)%slides.length;slides.forEach((s,k)=>{s.classList.toggle('active',k===i);s.setAttribute('aria-hidden',k!==i)});
-    count.textContent=i+1;$$('.hbp').forEach(im=>im.classList.toggle('on',+im.dataset.i===i));fill.style.transform=`scaleX(${(i+1)/slides.length})`};
-  const play=()=>{if(reduce)return;clearInterval(timer);timer=setInterval(()=>go(i+1),6500)};
-  $('.hero-ctrl .next').addEventListener('click',()=>{go(i+1);play()});
-  $('.hero-ctrl .prev').addEventListener('click',()=>{go(i-1);play()});
-  let vis=true;document.addEventListener('visibilitychange',()=>document.hidden?clearInterval(timer):(vis&&play()));
-  if('IntersectionObserver' in window)new IntersectionObserver(e=>{vis=e[e.length-1].isIntersecting;vis?play():clearInterval(timer)}).observe(hero);
-  hero.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')clearInterval(timer)});hero.addEventListener('pointerleave',()=>{if(vis&&!document.hidden)play()});
-  hero.addEventListener('focusin',()=>clearInterval(timer));
-  go(0);play()})();
+  const segs=$$('.seg-b'),count=$('.hero-ctrl .count b');
+  let i=0,hoverPause=false,userPause=false,vis=true;
+  const paused=()=>hero.classList.toggle('is-paused',hoverPause||userPause||!vis||document.hidden);
+  const go=n=>{
+    i=(n+slides.length)%slides.length;
+    slides.forEach((s,k)=>{s.classList.toggle('active',k===i);s.setAttribute('aria-hidden',k!==i)});
+    $$('.hbp').forEach(im=>im.classList.toggle('on',+im.dataset.i===i));
+    count.textContent=i+1;
+    segs.forEach((sg,k)=>{sg.classList.remove('run','done');sg.removeAttribute('aria-current');if(k<i)sg.classList.add('done')});
+    const cur=segs[i];cur.setAttribute('aria-current','true');
+    void cur.offsetWidth;                       // relance l'animation depuis zéro
+    if(!reduce)cur.classList.add('run');else cur.classList.add('done');
+  };
+  // fin de l'animation de la barre active : on passe à la suite
+  $('.seg').addEventListener('animationend',e=>{if(e.target.closest('.seg-b')===segs[i])go(i+1)});
+  segs.forEach((sg,k)=>sg.addEventListener('click',()=>go(k)));
+  $('.hero-ctrl .next').addEventListener('click',()=>go(i+1));
+  $('.hero-ctrl .prev').addEventListener('click',()=>go(i-1));
+  document.addEventListener('visibilitychange',paused);
+  if('IntersectionObserver' in window)new IntersectionObserver(e=>{vis=e[e.length-1].isIntersecting;paused()}).observe(hero);
+  // pause au survol des commandes et du bouton principal seulement (la bannière fait tout l'écran)
+  $$('.hero-ctrl,.slide .pill').forEach(el=>{
+    el.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'){hoverPause=true;paused()}});
+    el.addEventListener('pointerleave',()=>{hoverPause=false;paused()});
+  });
+  hero.addEventListener('focusin',()=>{hoverPause=true;paused()});
+  hero.addEventListener('focusout',()=>{hoverPause=false;paused()});
+  const pp=$('.pp');
+  pp.addEventListener('click',()=>{
+    userPause=!userPause;pp.classList.toggle('on',userPause);pp.setAttribute('aria-pressed',userPause);
+    pp.setAttribute('aria-label',userPause?'Reprendre le diaporama':'Mettre le diaporama en pause');paused();
+  });
+  go(0);
+})();
 
 /* ---------- Carrousel de services : flèches, progression, filtres ---------- */
 (function(){
