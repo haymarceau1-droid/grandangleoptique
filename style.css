@@ -780,3 +780,8 @@ body.menu-open{overflow:hidden}
   .map-consent{padding:22px 18px}
 }
 @media(max-width:340px){.quickbar a.primary .ic{display:none}.hours{font-size:14px}}
+
+/* ===== Icônes : Lucide (ISC), SVG en ligne ===== */
+.ic{stroke-width:1.9}
+.tbig .ic{stroke-width:.9}
+.card-ic .ic,.kf-ic .ic{stroke-width:1.7}
