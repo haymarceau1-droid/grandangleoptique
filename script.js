@@ -30,7 +30,7 @@ toTop&&toTop.addEventListener('click',()=>scrollTo({top:0,behavior:reduce?'auto'
     else{const nxt=slots.find(([a])=>t<a);msg=nxt?`Fermé · ouvre à ${fmt(nxt[0])}`:(d===6?'Fermé · ouvre mardi à 9h30':'Fermé · ouvre demain à 9h30')}}
   else msg='Fermé · ouvre mardi à 9h30';
   $$('[data-status]').forEach(el=>{
-    if(el.classList.contains('pill')){el.textContent=open?'Ouvert':'Fermé';el.classList.add(open?'open':'closed')}
+    if(el.classList.contains('badge')){el.textContent=open?'Ouvert':'Fermé';el.classList.add(open?'open':'closed')}
     else if(el.classList.contains('status')){el.lastElementChild.innerHTML=`<b>${msg.split(' · ')[0]}</b> · ${msg.split(' · ')[1]}`;el.classList.toggle('open',open)}
     else el.innerHTML=`<b>${msg.split(' · ')[0]}</b> · ${msg.split(' · ')[1]}`});
   $$('[data-status-dot]').forEach(el=>el.classList.toggle('open',open));
