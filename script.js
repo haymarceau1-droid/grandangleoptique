@@ -110,3 +110,27 @@ $$('.map-consent').forEach(box=>$('button',box).addEventListener('click',()=>{
     $$('.tabs button').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b)});
     $$('.pcard',rail).forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f));
     rail.scrollTo({left:0});upd()}))})();
+
+/* ---------- Bannière de cookies / contenus tiers ---------- */
+(function(){
+  const KEY='gao-consent',TTL=1000*60*60*24*182;
+  const read=()=>{try{const v=JSON.parse(localStorage.getItem(KEY));return v&&Date.now()-v.t<TTL?v:null}catch(e){return null}};
+  const write=m=>{try{localStorage.setItem(KEY,JSON.stringify({maps:m,t:Date.now()}))}catch(e){}};
+  const loadMap=box=>{if(box.classList.contains('loaded'))return;const fr=document.createElement('iframe');fr.className='map-frame';fr.title="Plan d'accès Grand Angle Optique";fr.loading='lazy';fr.referrerPolicy='no-referrer-when-downgrade';fr.src=box.dataset.src;box.replaceChildren(fr);box.classList.add('loaded')};
+  const apply=m=>{if(m)$$('.map-consent').forEach(loadMap)};
+  const el=document.createElement('div');el.className='cc';el.setAttribute('role','dialog');el.setAttribute('aria-labelledby','cc-t');el.setAttribute('aria-describedby','cc-d');
+  el.innerHTML=`<div class="cc-body"><div class="cc-head"><span class="cc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12.5A9 9 0 1 1 11.5 3a4 4 0 0 0 4.5 4.5 3.5 3.5 0 0 0 5 5z"/><circle cx="8.5" cy="11" r=".8"/><circle cx="12" cy="15.5" r=".8"/><circle cx="15.5" cy="12" r=".8"/></svg></span><h2 id="cc-t">Votre vie privée compte</h2></div>
+    <p id="cc-d">Ce site n’utilise aucun traceur publicitaire ni de mesure d’audience. Seul le plan d’accès <strong>Google Maps</strong> peut transmettre des données à Google, et uniquement si vous l’autorisez. <a href="politique-de-confidentialite.html">En savoir plus</a></p>
+    <div class="cc-opts"><div class="cc-opt"><span><strong>Essentiel</strong><small>Mémorise votre choix (6 mois). Aucun suivi.</small></span><span class="sw"><input type="checkbox" checked disabled aria-label="Essentiel (toujours actif)"><i></i></span></div>
+    <div class="cc-opt"><span><strong>Contenus tiers</strong><small>Affiche la carte Google Maps directement.</small></span><span class="sw"><input type="checkbox" id="cc-maps" aria-label="Autoriser Google Maps"><i></i></span></div></div></div>
+    <div class="cc-actions"><button type="button" class="cc-btn line" data-a="refuse">Tout refuser</button><button type="button" class="cc-btn fill cc-all" data-a="accept">Tout accepter</button><button type="button" class="cc-btn fill cc-save" data-a="save">Enregistrer</button><button type="button" class="cc-btn text" data-a="custom">Personnaliser</button></div>`;
+  document.body.appendChild(el);
+  const maps=$('#cc-maps',el),hide=()=>{el.classList.remove('show');setTimeout(()=>{el.hidden=true},600)};
+  const open=custom=>{el.hidden=false;const c=read();maps.checked=!!(c&&c.maps);el.classList.toggle('custom',!!custom);$('[data-a=custom]',el).textContent=custom?'Retour':'Personnaliser';requestAnimationFrame(()=>el.classList.add('show'))};
+  el.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a;
+    if(a==='custom'){const on=!el.classList.contains('custom');el.classList.toggle('custom',on);b.textContent=on?'Retour':'Personnaliser';return}
+    const m=a==='accept'?true:a==='refuse'?false:maps.checked;write(m);apply(m);hide()});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&el.classList.contains('show')&&read())hide()});
+  $$('[data-cookie-open]').forEach(b=>b.addEventListener('click',()=>open(true)));
+  const c=read();if(c)apply(c.maps);else{el.hidden=true;setTimeout(()=>open(false),900)}
+})();
