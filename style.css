@@ -1030,3 +1030,61 @@ html{scroll-behavior:auto}
   .hero2 .sub{display:none}
   .totop{bottom:14px}
 }
+
+
+/* =====================================================
+   Nos services : tout est visible à l'écran, sans défilement
+   ===================================================== */
+.find{padding-bottom:56px!important}
+.find-head{margin-bottom:28px}
+.svc-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.svc-grid .pcard.svc{flex:none;height:auto;min-height:0;width:auto;padding:16px 16px 18px;display:flex;flex-direction:column;scroll-snap-align:none}
+.svc-grid .pimg{flex:none;display:grid;place-items:center;height:150px;margin:6px 0 14px}
+.svc-grid .pimg img{width:auto;height:auto;max-width:118px;max-height:132px}
+.svc-grid .pmeta{flex:1}
+.svc-grid .pmeta strong{font-size:16px;line-height:1.3}
+.svc-grid .pmeta small{padding-right:0;margin-top:6px}
+.svc-grid .pgo{position:static;align-self:flex-end;margin-top:14px;width:38px;height:38px}
+.svc-grid .chip{position:static;align-self:flex-start;margin-bottom:2px}
+
+/* tablette : 3 + 2 sur une grille de 6 colonnes, sans case vide */
+@media(max-width:1100px){
+  .svc-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .svc-grid .pcard.svc:nth-child(-n+3){grid-column:span 2}
+  .svc-grid .pcard.svc:nth-child(n+4){grid-column:span 3}
+  .svc-grid .pimg{height:130px}
+}
+/* mobile : une liste de lignes, tout reste visible d'un coup d'œil */
+@media(max-width:640px){
+  .svc-grid{grid-template-columns:1fr;gap:10px}
+  .svc-grid .pcard.svc,.svc-grid .pcard.svc:nth-child(n){grid-column:auto;display:grid;grid-template-columns:76px minmax(0,1fr) auto;align-items:center;gap:14px;padding:12px 14px 12px 12px}
+  .svc-grid .chip{display:none}
+  .svc-grid .pimg{height:76px;margin:0}
+  .svc-grid .pimg img{max-width:68px;max-height:68px}
+  .svc-grid .pmeta{flex:none}
+  .svc-grid .pmeta small{font-size:13px}
+  .svc-grid .pgo{margin:0;align-self:center}
+}
+
+/* Services : 5 colonnes jusqu'à 900 px, lignes plus compactes sur mobile, mot long sans coupure */
+@media(max-width:1100px) and (min-width:901px){
+  .svc-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+  .svc-grid .pcard.svc:nth-child(n){grid-column:auto}
+  .svc-grid .pcard.svc{padding:14px 12px 16px}
+  .svc-grid .pimg{height:118px}
+  .svc-grid .pimg img{max-width:92px;max-height:104px}
+  .svc-grid .pmeta strong{font-size:15px}
+}
+.svc-grid .pmeta strong,.svc-grid .pmeta small{overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+@media(max-width:640px){
+  .find{padding-top:44px!important;padding-bottom:36px!important}
+  .find-head{margin-bottom:18px}
+  .svc-grid{gap:8px}
+  .svc-grid .pcard.svc,.svc-grid .pcard.svc:nth-child(n){grid-template-columns:60px minmax(0,1fr) auto;gap:12px;padding:8px 10px 8px 8px}
+  .svc-grid .pimg{height:60px}
+  .svc-grid .pimg img{max-width:54px;max-height:54px}
+  .svc-grid .pmeta strong{font-size:15px}
+  .svc-grid .pmeta small{font-size:12.5px;line-height:1.35;margin-top:2px}
+  .svc-grid .pgo{width:34px;height:34px}
+}
+@media(max-width:360px){.svc-grid .pmeta strong{font-size:14.5px}.svc-grid .pcard.svc,.svc-grid .pcard.svc:nth-child(n){grid-template-columns:52px minmax(0,1fr) auto;gap:10px}.svc-grid .pimg{height:52px}.svc-grid .pimg img{max-width:46px;max-height:46px}}

@@ -126,20 +126,6 @@ $$('.map-consent').forEach(box=>$('button',box).addEventListener('click',()=>{
   go(0);
 })();
 
-/* ---------- Carrousel de services : flèches, progression, filtres ---------- */
-(function(){
-  const rail=$('.rail');if(!rail)return;
-  const fill=$('.rail-ctrl .bar i'),step=()=>(rail.querySelector('.pcard:not(.hide)')?.offsetWidth||290)+16;
-  let max=0,tick=0;const measure=()=>{max=rail.scrollWidth-rail.clientWidth};
-  const upd=()=>{tick=0;fill.style.transform=`scaleX(${max>0?Math.max(.18,Math.min(1,(rail.scrollLeft/max)*.82+.18)):1})`};
-  rail.addEventListener('scroll',()=>{if(!tick)tick=requestAnimationFrame(upd)},{passive:true});addEventListener('resize',()=>{measure();upd()});measure();upd();
-  $('.rail-ctrl .next').addEventListener('click',()=>rail.scrollBy({left:step(),behavior:reduce?'auto':'smooth'}));
-  $('.rail-ctrl .prev').addEventListener('click',()=>rail.scrollBy({left:-step(),behavior:reduce?'auto':'smooth'}));
-  $$('.tabs button').forEach(b=>b.addEventListener('click',()=>{
-    $$('.tabs button').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b)});
-    $$('.pcard',rail).forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f));
-    rail.scrollTo({left:0});upd()}))})();
-
 /* ---------- Bannière de cookies / contenus tiers ---------- */
 (function(){
   const KEY='gao-consent',TTL=1000*60*60*24*182;
