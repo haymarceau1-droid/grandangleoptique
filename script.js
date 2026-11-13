@@ -7,7 +7,7 @@ const setMenu=o=>{nav.classList.toggle('open',o);btn.setAttribute('aria-expanded
 btn.addEventListener('click',()=>setMenu(!nav.classList.contains('open')));
 nav.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
 addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){setMenu(false);btn.focus()}});
-addEventListener('resize',()=>{if(innerWidth>900)setMenu(false)});
+addEventListener('resize',()=>{if(innerWidth>1020)setMenu(false)});
 $('#y').textContent=new Date().getFullYear();
 
 /* ---------- Scroll : progression, en-tête, retour en haut ---------- */
@@ -84,3 +84,29 @@ $$('.rdv-form').forEach(f=>{
 $$('.map-consent').forEach(box=>$('button',box).addEventListener('click',()=>{
   const fr=document.createElement('iframe');fr.className='map-frame';fr.title="Plan d'accès Grand Angle Optique";fr.loading='lazy';fr.referrerPolicy='no-referrer-when-downgrade';fr.src=box.dataset.src;
   box.replaceChildren(fr);box.classList.add('loaded')}));
+
+/* ---------- Hero : diaporama ---------- */
+(function(){
+  const slides=$$('.slide'),hero=$('.hero2');if(!slides.length)return;
+  let i=0,timer;const count=$('.hero-ctrl .count b'),fill=$('.hero-ctrl .bar i');
+  const go=n=>{i=(n+slides.length)%slides.length;slides.forEach((s,k)=>{s.classList.toggle('active',k===i);s.setAttribute('aria-hidden',k!==i)});
+    count.textContent=i+1;fill.style.transform=`scaleX(${(i+1)/slides.length})`};
+  const play=()=>{if(reduce)return;clearInterval(timer);timer=setInterval(()=>go(i+1),6500)};
+  $('.hero-ctrl .next').addEventListener('click',()=>{go(i+1);play()});
+  $('.hero-ctrl .prev').addEventListener('click',()=>{go(i-1);play()});
+  hero.addEventListener('pointerenter',()=>clearInterval(timer));hero.addEventListener('pointerleave',play);
+  hero.addEventListener('focusin',()=>clearInterval(timer));
+  go(0);play()})();
+
+/* ---------- Carrousel de services : flèches, progression, filtres ---------- */
+(function(){
+  const rail=$('.rail');if(!rail)return;
+  const fill=$('.rail-ctrl .bar i'),step=()=>(rail.querySelector('.pcard:not(.hide)')?.offsetWidth||290)+16;
+  const upd=()=>{const m=rail.scrollWidth-rail.clientWidth;fill.style.transform=`scaleX(${m>0?Math.max(.18,Math.min(1,(rail.scrollLeft/m)*.82+.18)):1})`};
+  rail.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  $('.rail-ctrl .next').addEventListener('click',()=>rail.scrollBy({left:step(),behavior:reduce?'auto':'smooth'}));
+  $('.rail-ctrl .prev').addEventListener('click',()=>rail.scrollBy({left:-step(),behavior:reduce?'auto':'smooth'}));
+  $$('.tabs button').forEach(b=>b.addEventListener('click',()=>{
+    $$('.tabs button').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b)});
+    $$('.pcard',rail).forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f));
+    rail.scrollTo({left:0});upd()}))})();

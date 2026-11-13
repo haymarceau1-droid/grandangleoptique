@@ -18,52 +18,74 @@
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<div class="topbar"><div class="wrap">
-  <span class="status" data-status><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Mar.–sam. 9h30–12h30, 13h30–18h30</span></span>
-  <a href="https://www.google.com/maps/search/?api=1&amp;query=Grand+Angle+Optique+Angers" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>CCial L’Esplanade, Angers</a>
-  <a href="tel:+33241681145"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>02 41 68 11 45</a>
-</div></div>
 <header class="site-header">
-  <a class="brand" href="index.html" aria-label="Grand Angle Optique – accueil"><img src="assets/logo.png" alt="Grand Angle Optique" width="150" height="62"></a>
+  <nav id="nav" aria-label="Navigation principale">
+    <div class="grp grp-l"><a href="index.html" aria-current="page" class="m-only">Accueil</a><a href="notre-savoir-faire.html">Notre savoir faire</a><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="montures-de-depannage.html">Montures de dépannage</a></div>
+    <div class="grp grp-r"><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a class="nav-tel" href="tel:+33241681145" aria-label="Appeler le 02 41 68 11 45"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>02 41 68 11 45</span></a><a href="index.html#rdv" class="pill">Rendez-vous<span class="pill-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></a></div>
+  </nav>
+  <a class="brand" href="index.html" aria-label="Grand Angle Optique – accueil"><img src="assets/logo.png" alt="Grand Angle Optique" width="150" height="75"></a>
   <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
-  <nav id="nav" aria-label="Navigation principale"><a href="index.html" aria-current="page">Accueil</a><a href="notre-savoir-faire.html">Notre savoir faire</a><a href="qui-sommes-nous.html">Qui sommes-nous ?</a><a href="montures-de-depannage.html">Montures de dépannage</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="index.html#rdv" class="cta"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>Prendre rendez-vous</a></nav>
 </header>
 <main id="contenu">
-<section class="hero">
-    <div class="hero-text">
-      <p class="eyebrow">Opticien indépendant à Angers <span class="dot" data-status-dot></span></p>
-      <h1>Voir grand, <span>voir juste.</span></h1>
-      <p>Analyse de la vue, choix des montures, réglage gratuit et accompagnement administratif : tout pour voir juste, à Angers.</p>
-      <div class="actions">
-        <a class="btn" href="#rdv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>Prendre rendez-vous</a>
-        <a class="btn ghost on-dark" href="tel:+33241681145"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>02 41 68 11 45</a>
-      </div>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="ring r1"></div><div class="ring r2"></div>
+<section class="hero hero2" aria-roledescription="carrousel" aria-label="Présentation">
+  <div class="hero-bg" aria-hidden="true"><div class="hb-l"></div><div class="hb-r"><i></i><i></i><i></i></div></div>
+  <div class="hero-art" aria-hidden="true">
       <svg id="eye" viewBox="0 0 240 240">
-        <defs><clipPath id="lid"><path id="lidp" d="M10 120C45 66 82 46 120 46s75 20 110 74c-35 54-72 74-110 74S45 174 10 120z"/></clipPath>
+        <defs><clipPath id="lid"><path d="M10 120C45 66 82 46 120 46s75 20 110 74c-35 54-72 74-110 74S45 174 10 120z"/></clipPath>
         <radialGradient id="ir" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#2fa3a0"/><stop offset="1" stop-color="#014a4a"/></radialGradient></defs>
         <path d="M10 120C45 66 82 46 120 46s75 20 110 74c-35 54-72 74-110 74S45 174 10 120z" fill="#fff"/>
         <g clip-path="url(#lid)"><g id="iris"><circle cx="120" cy="120" r="46" fill="url(#ir)"/><circle cx="120" cy="120" r="22" fill="#012a2a"/><circle cx="108" cy="106" r="7" fill="#fff" opacity=".9"/></g>
           <rect id="blink" x="0" y="0" width="240" height="0" fill="#026666"/></g>
-        <path d="M10 120C45 66 82 46 120 46s75 20 110 74c-35 54-72 74-110 74S45 174 10 120z" fill="none" stroke="#fff" stroke-width="5" opacity=".9"/>
       </svg>
-    </div>
-  </section>
-  
-  <div class="marquee" aria-hidden="true"><div class="track"><span>Analyse de la vue</span><span>Montures pour tous</span><span>Réglage gratuit</span><span>Lentilles de contact</span><span>Impression 3D de dépannage</span><span>Mutuelle &amp; remboursement</span><span>Analyse de la vue</span><span>Montures pour tous</span><span>Réglage gratuit</span><span>Lentilles de contact</span><span>Impression 3D de dépannage</span><span>Mutuelle &amp; remboursement</span></div></div>
-  <section class="stats"><div class="stat"><b data-count="25" data-suffix="+">0</b><span>ans d’expérience</span></div><div class="stat"><b data-count="1" data-prefix="&lt; " data-suffix=" h">0</b><span>pour une monture de dépannage</span></div><div class="stat"><b data-count="5">0</b><span>services au même endroit</span></div><div class="stat"><b data-count="0" data-suffix=" €">0</b><span>le réglage, même après achat</span></div></section>
-<section class="section" id="services"><div class="sec-head"><p class="kicker">Notre savoir faire</p><h2>Tout pour bien voir, au même endroit</h2></div>
-  <div class="cards"><a class="card" href="notre-savoir-faire.html#analyse"><span class="card-img"><img class="" src="assets/img/enseigne.webp" alt="Enseigne Grand Angle Optique et son logo en forme d’œil" width="228" height="225" loading="lazy" decoding="async"></span><h3>L’analyse de votre vue</h3><p>Un bilan complet et précis de votre vision par nos opticiens diplômés.</p><span class="more">En savoir plus <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="card" href="notre-savoir-faire.html#montures"><span class="card-img"><img class="" src="assets/img/conseil.webp" alt="Cliente souriante en plein choix de monture" width="154" height="156" loading="lazy" decoding="async"></span><h3>Le choix des montures</h3><p>Hommes, femmes, enfants : esthétique, confort et robustesse.</p><span class="more">En savoir plus <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="card" href="notre-savoir-faire.html#reglage"><span class="card-img"><img class="" src="assets/img/reglage.webp" alt="Tournevis de précision pour le réglage des lunettes" width="161" height="155" loading="lazy" decoding="async"></span><h3>Réglage & après-vente</h3><p>Ajustage gratuit, même après l’achat. Entretien et réparation.</p><span class="more">En savoir plus <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="card" href="notre-savoir-faire.html#lentilles"><span class="card-img"><img class="" src="assets/img/lentille.webp" alt="Lentille de contact posée sur le bout d’un doigt" width="154" height="154" loading="lazy" decoding="async"></span><h3>Lentilles de contact</h3><p>Choix, adaptation, conseils personnalisés et suivi régulier.</p><span class="more">En savoir plus <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="card" href="notre-savoir-faire.html#administratif"><span class="card-img"><img class="" src="assets/img/telephone.webp" alt="Opticienne au téléphone avec une cliente" width="233" height="282" loading="lazy" decoding="async"></span><h3>Accompagnement administratif</h3><p>Mutuelle et remboursement : une transparence totale sur les coûts.</p><span class="more">En savoir plus <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div></section>
+  </div>
+  <div class="hero-slides"><div class="slide active" data-i="0" aria-hidden="false">
+      <p class="eyebrow-s">Opticien indépendant à Angers <span class="dot" data-status-dot></span></p>
+      <h1>Voir grand,<br><em>voir juste.</em></h1>
+      <p class="sub">Analyse de la vue, montures, lentilles, réglage gratuit et accompagnement administratif.</p>
+      <a class="pill big" href="#rdv">Prendre rendez-vous<span class="pill-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></a></div><div class="slide" data-i="1" aria-hidden="true">
+      <p class="eyebrow-s">Montures</p>
+      <p class="h1">Des montures<br><em>à votre image.</em></p>
+      <p class="sub">Hommes, femmes, enfants : des créateurs français aux marques internationales.</p>
+      <a class="pill big" href="notre-savoir-faire.html#montures">Découvrir nos montures<span class="pill-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></a></div><div class="slide" data-i="2" aria-hidden="true">
+      <p class="eyebrow-s">Dépannage 3D</p>
+      <p class="h1">Lunettes cassées ?<br><em>Repartez en 1 h.</em></p>
+      <p class="sub">Nous imprimons en 3D une monture de dépannage sur mesure, en filament végétal.</p>
+      <a class="pill big" href="montures-de-depannage.html">Voir le service<span class="pill-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></a></div></div>
+  <div class="hero-ctrl"><span class="count"><b>1</b>/3</span><span class="bar"><i></i></span>
+    <button type="button" class="prev" aria-label="Diapositive précédente"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" class="next" aria-label="Diapositive suivante"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div>
+</section>
+<div class="sheet">
+<section class="section find" id="services"><div class="find-head"><h2>Trouvez votre solution</h2>
+  <div class="tabs" role="tablist" aria-label="Filtrer les services"><button type="button" role="tab" class="on" data-f="all" aria-selected="true">Tous</button><button type="button" role="tab" data-f="vue" aria-selected="false">Vue</button><button type="button" role="tab" data-f="suivi" aria-selected="false">Suivi</button></div></div>
+  <div class="rail" tabindex="0" aria-label="Services"><a class="pcard" href="notre-savoir-faire.html#analyse" data-cat="vue"><span class="chip">Vue</span>
+      <span class="pimg"><img src="assets/img/enseigne.webp" alt="Enseigne Grand Angle Optique et son logo en forme d’œil" width="228" height="225" loading="lazy"></span>
+      <span class="pmeta"><small>Vue</small><strong>Analyse de la vue</strong></span><span class="pgo" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="pcard" href="notre-savoir-faire.html#montures" data-cat="vue"><span class="chip">Style</span>
+      <span class="pimg"><img src="assets/img/conseil.webp" alt="Cliente souriante en plein choix de monture" width="154" height="156" loading="lazy"></span>
+      <span class="pmeta"><small>Style</small><strong>Choix des montures</strong></span><span class="pgo" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="pcard" href="notre-savoir-faire.html#reglage" data-cat="suivi"><span class="chip">Après-vente</span>
+      <span class="pimg"><img src="assets/img/reglage.webp" alt="Tournevis de précision pour le réglage des lunettes" width="161" height="155" loading="lazy"></span>
+      <span class="pmeta"><small>Après-vente</small><strong>Réglage gratuit & SAV</strong></span><span class="pgo" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="pcard" href="notre-savoir-faire.html#lentilles" data-cat="vue"><span class="chip">Lentilles</span>
+      <span class="pimg"><img src="assets/img/lentille.webp" alt="Lentille de contact posée sur le bout d’un doigt" width="154" height="154" loading="lazy"></span>
+      <span class="pmeta"><small>Lentilles</small><strong>Lentilles de contact</strong></span><span class="pgo" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="pcard" href="notre-savoir-faire.html#administratif" data-cat="suivi"><span class="chip">Démarches</span>
+      <span class="pimg"><img src="assets/img/telephone.webp" alt="Opticienne au téléphone avec une cliente" width="233" height="282" loading="lazy"></span>
+      <span class="pmeta"><small>Démarches</small><strong>Mutuelle & remboursement</strong></span><span class="pgo" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  <div class="rail-ctrl"><span class="bar"><i></i></span><button type="button" class="prev" aria-label="Précédent"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" class="next" aria-label="Suivant"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div>
+</section>
+<section class="section trio"><div class="center-head"><p class="eyebrow-d">Notre boutique</p><h2>Un opticien indépendant au cœur d’Angers</h2><p>Une petite équipe, 25 ans d’expérience et des solutions concrètes pour votre confort visuel.</p></div>
+  <div class="tcards">
+    <a class="tcard t1" href="montures-de-depannage.html"><span class="chip">Exclusivité</span><span class="tbig"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg></span><span class="ttitle">Dépannage en impression 3D</span><span class="tgo"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="tcard t2" href="qui-sommes-nous.html"><span class="chip">Qui sommes-nous</span><img src="assets/img/telephone.webp" alt="Opticienne au téléphone avec une cliente" width="233" height="282" loading="lazy"><span class="ttitle">Une équipe à votre écoute</span><span class="tgo"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="tcard t3" href="#rdv"><span class="chip">Rendez-vous</span><img src="assets/img/conseil.webp" alt="Cliente souriante en plein choix de monture" width="154" height="156" loading="lazy"><span class="ttitle">Réservez votre créneau</span><span class="tgo"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div></section>
+</div>
 <section class="feature"><div class="wrap feature-grid">
   <div><p class="kicker">Exclusivité à Angers</p><h2>Lunettes cassées&nbsp;? Repartez en moins d’une heure.</h2>
     <p>Nous modélisons et imprimons en 3D une monture de dépannage adaptée à vos verres, en filament végétal. Vous gardez votre correction le temps de la réparation.</p>
     <a class="btn light" href="montures-de-depannage.html">Découvrir le dépannage 3D <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   <ol class="mini-steps"><li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b>Diagnostic</b><span>et mesures</span></li><li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg><b>Impression 3D</b><span>sous vos yeux</span></li><li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.5" cy="14" r="3.5"/><circle cx="17.5" cy="14" r="3.5"/><path d="M10 14h4M3 14l1.5-6M21 14l-1.5-6"/></svg><b>Montage</b><span>de vos verres</span></li></ol>
 </div></section>
-  <section class="section alt"><div class="team-teaser">
-  <div class="avatar big" aria-hidden="true">B</div>
+  <section class="stats"><div class="stat"><b data-count="25" data-suffix="+">0</b><span>ans d’expérience</span></div><div class="stat"><b data-count="1" data-prefix="&lt; " data-suffix=" h">0</b><span>pour une monture de dépannage</span></div><div class="stat"><b data-count="5">0</b><span>services au même endroit</span></div><div class="stat"><b data-count="0" data-suffix=" €">0</b><span>le réglage, même après achat</span></div></section>
+<section class="section alt"><div class="team-teaser">
+  <div class="portrait"><img src="assets/img/telephone.webp" alt="Blandine, gérante et opticienne diplômée" width="233" height="282" loading="lazy"></div>
   <div><p class="kicker">Qui sommes-nous</p><h2>Blandine, gérante &amp; opticienne diplômée</h2>
   <p>Plus de 25 ans d’expérience au service de votre santé visuelle, une écoute attentive et un conseil sur mesure.</p>
   <a class="link" href="qui-sommes-nous.html">Découvrir la boutique <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></section>
@@ -111,7 +133,7 @@
 </main>
 <footer class="site-footer">
   <div class="wrap fgrid">
-    <div><img class="flogo" src="assets/logo.png" alt="Grand Angle Optique" width="150" height="62" loading="lazy">
+    <div><img class="flogo" src="assets/logo.png" alt="Grand Angle Optique" width="150" height="75" loading="lazy">
       <p>Opticien indépendant à Angers. Analyse de la vue, montures, lentilles, réglage gratuit et dépannage en impression 3D.</p></div>
     <div><h2>Le magasin</h2><p>CCial L’Esplanade<br>Place du Chapeau de Gendarme<br>49000 Angers</p>
       <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Grand+Angle+Optique+Angers" target="_blank" rel="noopener">Itinéraire</a></p></div>
