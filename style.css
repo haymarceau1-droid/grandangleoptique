@@ -962,3 +962,11 @@ html{scroll-behavior:auto}
   .ft-actions .btn{width:100%;justify-content:flex-start}
   .ft-bottom{flex-direction:column;align-items:flex-start}
 }
+
+/* Header (ordinateur) : un point sous le lien survolé ou actif, au lieu d'une barre */
+@media(min-width:1021px){
+  .grp a:not(.pill){padding:10px 0 12px}
+  .grp a:not(.pill)::after{content:"";position:absolute;left:50%;right:auto;bottom:2px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#fff;
+    transform:scale(0);transform-origin:center;opacity:0;transition:transform .25s cubic-bezier(.2,.7,.2,1),opacity .2s ease}
+  .grp a:not(.pill):hover::after,.grp a[aria-current=page]::after{transform:scale(1);opacity:1}
+}
