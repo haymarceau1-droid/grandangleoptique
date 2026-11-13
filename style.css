@@ -970,3 +970,9 @@ html{scroll-behavior:auto}
     transform:scale(0);transform-origin:center;opacity:0;transition:transform .25s cubic-bezier(.2,.7,.2,1),opacity .2s ease}
   .grp a:not(.pill):hover::after,.grp a[aria-current=page]::after{transform:scale(1);opacity:1}
 }
+
+/* Header : fond flouté (porté par le calque ::before, pas par la barre, pour ne pas casser le menu mobile plein écran) */
+.site-header::before{background:#014a4a99;-webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25)}
+.site-header.scrolled::before{background:#014a4acc}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-header::before,.site-header.scrolled::before{background:#014a4af2}}
+@media(prefers-reduced-transparency:reduce){.site-header::before,.site-header.scrolled::before{background:#014a4a;-webkit-backdrop-filter:none;backdrop-filter:none}}
