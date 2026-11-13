@@ -1088,3 +1088,42 @@ html{scroll-behavior:auto}
   .svc-grid .pgo{width:34px;height:34px}
 }
 @media(max-width:360px){.svc-grid .pmeta strong{font-size:14.5px}.svc-grid .pcard.svc,.svc-grid .pcard.svc:nth-child(n){grid-template-columns:52px minmax(0,1fr) auto;gap:10px}.svc-grid .pimg{height:52px}.svc-grid .pimg img{max-width:46px;max-height:46px}}
+
+
+/* =====================================================
+   Les montures : mosaïque de cinq photos
+   ===================================================== */
+.gallery{padding-top:40px!important}
+.gallery .center-head{margin-bottom:26px!important}
+.mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,250px));gap:14px;max-width:var(--max)}
+.mt{position:relative;display:block;min-width:0;border-radius:var(--r-card);overflow:hidden;color:#fff;text-decoration:none;isolation:isolate;background:var(--teal-d)}
+.mt.m-a{grid-column:1/3;grid-row:1/3}
+.mt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s var(--ease)}
+.mt::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 42%,#014a4ad9)}
+.mt:hover img{transform:scale(1.04)}
+.mt-label{position:absolute;top:14px;left:14px;padding:4px 10px;border-radius:4px;background:#014a4acc;font:600 12px/1.5 var(--body)}
+.mt-title{position:absolute;left:16px;right:64px;bottom:16px;font:400 21px/1.15 var(--display)}
+.mt.m-a .mt-title{font-size:26px;left:20px;bottom:20px}
+.mt .tgo{position:absolute;right:14px;bottom:14px;width:38px;height:38px;border-radius:6px;background:#fff;color:var(--teal);display:grid;place-items:center;transition:transform .3s var(--ease)}
+.mt:hover .tgo{transform:translateX(3px)}
+.mt:focus-visible{outline:3px solid var(--teal-l);outline-offset:3px}
+.mos-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px auto 0;max-width:var(--max)}
+@media(max-width:1020px){.mosaic{grid-template-rows:repeat(2,minmax(0,220px))}}
+@media(max-width:700px){
+  .mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:minmax(0,170px);gap:10px}
+  .mt.m-a{grid-column:1/-1;grid-row:auto;height:210px}
+  .mt-title{font-size:17px;left:12px;right:52px;bottom:12px}
+  .mt.m-a .mt-title{font-size:22px}
+  .mt-label{top:10px;left:10px;font-size:11px}
+  .mt .tgo{width:34px;height:34px;right:10px;bottom:10px}
+  .mos-actions .btn{flex:1 1 100%;justify-content:space-between}
+}
+
+/* Mosaïque mobile : lignes de hauteur explicite (grande tuile 210 px, puis deux rangées de 170 px) */
+@media(max-width:700px){
+  .mosaic{grid-template-rows:210px 170px 170px;grid-auto-rows:170px}
+  .mt.m-a{grid-column:1/-1;grid-row:auto;height:auto}
+}
+.mt-title{max-height:calc(100% - 56px);overflow:hidden;overflow-wrap:break-word}
+@media(max-width:1020px){.mt-title{font-size:18px;right:56px}.mt.m-a .mt-title{font-size:24px}}
+@media(max-width:700px){.mt-title{font-size:16px}.mt.m-a .mt-title{font-size:22px}}
