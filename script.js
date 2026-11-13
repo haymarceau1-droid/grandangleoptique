@@ -11,7 +11,7 @@ addEventListener('resize',()=>{if(innerWidth>1020)setMenu(false)});
 $('#y').textContent=new Date().getFullYear();
 
 /* ---------- Scroll : progression, en-tête, retour en haut ---------- */
-const bar=document.createElement('div');bar.className='progress';document.body.prepend(bar);
+const bar={style:{}};
 const hdr=$('.site-header'),toTop=$('.totop');
 const onScroll=()=>{const h=document.documentElement,y=h.scrollTop,m=h.scrollHeight-h.clientHeight;
   bar.style.transform=`scaleX(${m>0?y/m:0})`;hdr.classList.toggle('scrolled',y>30);toTop&&toTop.classList.toggle('show',y>700)};

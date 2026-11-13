@@ -663,3 +663,64 @@ body.menu-open{overflow:hidden}
   .mf-nav{flex-direction:column;gap:4px}
   .mf-bottom{flex-wrap:wrap}
 }
+
+
+/* =====================================================
+   Sobriété : retrait des effets décoratifs
+   ===================================================== */
+:root{--r-card:8px}
+/* pas de barre de progression, de halos, de reflets */
+.progress{display:none!important}
+.hero2::before,.hero2::after,.page-hero::after,.feature::before,.foot-panel::before{display:none!important}
+.btn::after,.cta::after{display:none!important}
+.btn:hover,.cta:hover,.pill:hover,.cc-btn:hover{transform:none;box-shadow:none}
+.pill:hover .pill-ic{transform:none}
+/* fonds unis */
+.site-header,.site-header.scrolled{background:var(--teal-d);backdrop-filter:none;box-shadow:none;border-radius:8px}
+.page-hero{background:var(--teal)}
+.feature{background:var(--teal-d)}
+.hero2 h1 span,.hero h1 span{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--tint)}
+/* titres : plus de barre sous les h2, plus de surtitres décoratifs */
+.section>h2::after,.sec-head h2::after,h1.ph::after,.center-head h2::after,.find-head h2::after{display:none!important}
+.kicker,.eyebrow-d{display:none}
+.center-head{text-align:left;margin:0 0 28px!important;max-width:none}
+.center-head p{max-width:40em}
+.sec-head{margin-bottom:28px}
+/* cartes : à plat, sans rotation ni bandeau coloré */
+.card::before{display:none}
+.card,.pcard,.gcard,.tcard,.info-card,.rdv-form,.kf,.map-consent,.map-frame,.photo-strip figure{border-radius:var(--r-card);box-shadow:none}
+.card,.info-card,.rdv-form{border:1px solid #02666626}
+.pcard{background:#f3f5f4}
+.pcard:hover,.gcard:hover,.tcard:hover,a.info-card:hover,.card:hover{transform:translateY(-2px);box-shadow:none}
+.pcard:hover .pimg img,.gcard:hover img,.tcard:hover img,.photo-strip figure:hover img{transform:scale(1.03)}
+.pcard:hover .pgo,.tcard:hover .tgo{transform:none}
+.card:hover .card-ic,.card:hover .card-img img{transform:none}
+.kf{background:var(--alt);border-left-width:4px}
+.kf.rev{background:var(--alt);border-right-width:4px}
+.kf:hover{transform:none;box-shadow:none}
+.kf-img::before{display:none}
+.kf:hover .kf-img img,.person:hover .portrait,.team-teaser:hover .portrait{transform:none}
+.kf-img img,.pimg img,.portrait,.tcard img{filter:none}
+.t1,.t2,.t3{background:var(--teal)}
+.t1{background:var(--teal-d)}
+.tcard::after,.gcard::after{opacity:.9}
+/* animations d'apparition : discrètes */
+.reveal,.reveal.left,.reveal.right{transform:none!important;transition:opacity .45s ease}
+.hbp,.hbp.on{transform:none;transition:opacity 1s ease}
+/* ombres sur le fond du hero : plus légères */
+.hero2 h1,.hero2 .h1{text-shadow:none}
+.hero2 .sub{text-shadow:none}
+/* bandeau « étapes » du dépannage : à plat */
+.mini-steps li{background:#ffffff12;border:0;backdrop-filter:none;border-radius:var(--r-card)}
+.mini-steps li:hover{background:#ffffff1c;transform:none}
+/* bannière de cookies : sans icône décorative */
+.cc{border-radius:8px;box-shadow:0 12px 40px #00000033}
+.cc::before{display:none}
+.cc-ico{display:none}
+.cc h2{font-size:20px}
+/* barre rapide et flottants */
+.totop{box-shadow:none}
+.subnav{border-radius:8px;box-shadow:none;background:#fff;border:1px solid #02666626;backdrop-filter:none;padding:6px}
+.subnav a{border-radius:6px}
+.eyebrow{border:0;padding:0;backdrop-filter:none}
+.g2{margin-top:0}
