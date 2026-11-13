@@ -906,3 +906,17 @@ html{scroll-behavior:auto}
 /* Sections : plus de barre colorée sur le côté */
 .kf,.kf.rev{border-left:0!important;border-right:0!important}
 @media(max-width:600px){.kf,.kf.rev{border-left:0!important;border-right:0!important}}
+
+
+/* ===== Dépannage 3D : photos de la machine ===== */
+.tcard.t1.photo{background:var(--teal-d)}
+.about .kf.has-fig{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:36px;align-items:start}
+.about .kf.has-fig .kf-text>*:first-child{margin-top:0}
+.kf-fig{margin:0;position:sticky;top:110px}
+.kf-fig img{display:block;width:100%;height:auto;border-radius:8px;background:#fff;border:1px solid #02666622}
+.kf-fig.portrait img{aspect-ratio:3/4;object-fit:cover}
+.kf-fig figcaption{margin-top:10px;font-size:13.5px;line-height:1.45;color:var(--muted)}
+@media(max-width:900px){
+  .about .kf.has-fig{grid-template-columns:1fr;gap:20px}
+  .kf-fig{position:static;max-width:420px}
+}
