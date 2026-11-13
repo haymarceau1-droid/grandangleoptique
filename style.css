@@ -531,3 +531,18 @@ body.menu-open{overflow:hidden}
   radial-gradient(ellipse 65% 60% at 50% 50%,#014a4acc,#014a4a66 70%,transparent 100%),
   linear-gradient(180deg,#014a4acc 0,#0266668c 35%,#0266668c 60%,#014a4aeb 100%)}
 @media(max-width:600px){.hero-slides{padding-bottom:200px}.hero-ctrl{bottom:100px}}
+
+/* ===== Logo plus grand dans le header ===== */
+.site-header{height:84px}
+.site-header.scrolled{height:68px}
+.brand img{height:64px}
+.site-header.scrolled .brand img{height:50px}
+.page-hero{padding-top:150px}
+@media(max-width:1020px){
+  .site-header,.site-header.scrolled{height:66px}
+  .brand img,.site-header.scrolled .brand img{height:50px}
+  nav#nav{padding-top:110px}
+}
+@media(max-width:600px){
+  .brand img,.site-header.scrolled .brand img{height:46px}
+}
